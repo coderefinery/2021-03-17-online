@@ -11,11 +11,6 @@ title = "Online CodeRefinery Workshop and Hackathon on Software Testing"
 ### Registration
 <a class="btn btn-danger disabled" href="#" data-mode="1" target="_blank">Registration is closed</a>
 
-
-<b>Soft deadline on March 3!</b> To make it easier for hackathon mentors
-to prepare we prioritize early registration. If there are still free seats
-after March 3 we will keep accepting participants.
-
 ### Who the event is for
 
 Are you doing any of these things?
