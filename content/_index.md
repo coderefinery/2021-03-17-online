@@ -143,7 +143,7 @@ Other requirements:
 #### *Day 1, March 17*
 - 9:00 - 9:15
   Welcome and practical information
-- 9:30 - 12:00
+- 9:15 - 12:00
   [Software testing workshop](https://coderefinery.github.io/testing/)
 - 12:00-12:30
   Project pitching and introductory meeting with mentors
@@ -188,17 +188,21 @@ corresponding to your affiliation.
 - Emilia Lipponen
 - Johan Hellsvik
 - Mark Abraham
+- Naoe Tatar (Instructor only)
 - Qiang Li
 - Radovan Bast
 - Roberto Di Remigio
-- Samantha Wittke
 - Thor Wikfeldt
 
 
-### Coordinator and host
+### Coordinators and hosts
 
 - Naoe Tatara
+- Thor Wikfeldt
 
+### Helpers
+
+- Samantha Wittke
 
 ### FAQ
 
