@@ -136,6 +136,24 @@ Other requirements:
 - [Editor](https://coderefinery.github.io/installation/editors/)
 - [Git](https://coderefinery.github.io/installation/git/)
 - [Zoom](https://coderefinery.github.io/installation/zoom/)
+- [Python and pytest](https://coderefinery.github.io/installation/python-testing/)
+
+Optional requirements depending on which language you will be using:
+
+- C++ users will need [CMake](https://cmake.org/) and 
+  [Catch2](https://github.com/catchorg/Catch2). Both can be installed through conda, 
+  which you should have set up by following the "Python and pytest" installation 
+  instructions above. In a terminal, run:  
+  `conda install -c conda-forge cmake`  
+  `conda install -c conda-forge catch2`  
+
+- Fortran users will need to install [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit).
+  pFUnit is supported on Linux and MacOS and is available on Windows through Cygwin. 
+  Install pFUnit by following the 
+  [official instructions]([pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit))
+
+- R users will need [testthat](https://testthat.r-lib.org/). Follow the 
+  instructions on the [official page](https://testthat.r-lib.org/).
 
 
 ### Schedule
