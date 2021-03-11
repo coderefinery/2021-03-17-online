@@ -150,7 +150,7 @@ Optional requirements depending on which language you will be using:
 - Fortran users will need to install [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit).
   pFUnit is supported on Linux and MacOS and is available on Windows through Cygwin. 
   Install pFUnit by following the 
-  [official instructions](pFUnithttps://github.com/Goddard-Fortran-Ecosystem/pFUnit).
+  [official instructions](https://github.com/Goddard-Fortran-Ecosystem/pFUnit).
 
 - R users will need [testthat](https://testthat.r-lib.org/). Follow the 
   instructions on the [official page](https://testthat.r-lib.org/).
