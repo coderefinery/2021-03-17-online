@@ -150,7 +150,7 @@ Optional requirements depending on which language you will be using:
 - Fortran users will need to install [pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit).
   pFUnit is supported on Linux and MacOS and is available on Windows through Cygwin. 
   Install pFUnit by following the 
-  [official instructions]([pFUnit](https://github.com/Goddard-Fortran-Ecosystem/pFUnit))
+  [official instructions](pFUnithttps://github.com/Goddard-Fortran-Ecosystem/pFUnit).
 
 - R users will need [testthat](https://testthat.r-lib.org/). Follow the 
   instructions on the [official page](https://testthat.r-lib.org/).
@@ -164,15 +164,17 @@ Optional requirements depending on which language you will be using:
 - 9:15 - 12:00
   [Software testing workshop](https://coderefinery.github.io/testing/)
 - 12:00-12:30
-  Project pitching and introductory meeting with mentors
+  Project pitching and introductory meeting with mentors (hackathon participants only)
 
 #### *Day 2, March 24*
-- 9:00 - 09:20
+- 9:00 - 9:15
   Introduction
-- 9:20 - 12:00
+- 9:15 - 12:00
   Project work with mentors
-- 12:00 - 12:30
+- 12:00 - 12:20
   Presentations of progress made and lessons learned
+- 12:20 - 12:30
+  Final words and post-hackathon survey.
 
 
 ### Location
@@ -203,10 +205,9 @@ corresponding to your affiliation.
 
 - Anne Fouilloux
 - Diana Iusan
-- Emilia Lipponen
 - Johan Hellsvik
 - Mark Abraham
-- Naoe Tatar (Instructor only)
+- Naoe Tatara (Instructor only)
 - Qiang Li
 - Radovan Bast
 - Roberto Di Remigio
