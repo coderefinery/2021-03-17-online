@@ -203,7 +203,6 @@ corresponding to your affiliation.
 
 - Anne Fouilloux
 - Diana Iusan
-- Emilia Lipponen
 - Johan Hellsvik
 - Mark Abraham
 - Naoe Tatar (Instructor only)
