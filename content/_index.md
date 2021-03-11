@@ -207,7 +207,7 @@ corresponding to your affiliation.
 - Diana Iusan
 - Johan Hellsvik
 - Mark Abraham
-- Naoe Tatar (Instructor only)
+- Naoe Tatara (Instructor only)
 - Qiang Li
 - Radovan Bast
 - Roberto Di Remigio
