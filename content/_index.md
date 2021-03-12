@@ -210,6 +210,7 @@ corresponding to your affiliation.
 - Naoe Tatara (Instructor only)
 - Qiang Li
 - Radovan Bast
+- Richard Darst
 - Roberto Di Remigio
 - Thor Wikfeldt
 
