@@ -137,6 +137,7 @@ Other requirements:
 - [Git](https://coderefinery.github.io/installation/git/)
 - [Zoom](https://coderefinery.github.io/installation/zoom/)
 - [Python and pytest](https://coderefinery.github.io/installation/python-testing/)
+- [GitHub](https://github.com/) or [GitLab](https://gitlab.com/) account. 
 
 Optional requirements depending on which language you will be using:
 
