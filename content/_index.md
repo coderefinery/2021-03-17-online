@@ -160,11 +160,29 @@ Optional requirements depending on which language you will be using:
 ### Schedule
 
 #### *Day 1, March 17*
-- 9:00 - 9:15
+- 9:00 - 9:10
   Welcome and practical information
-- 9:15 - 12:00
+- 9:10 - 12:00
   [Software testing workshop](https://coderefinery.github.io/testing/)
-- 12:00-12:30
+  - 9:10 - 9:20
+    [Motivation](https://coderefinery.github.io/testing/motivation/)
+  - 9:20 - 9:30
+    [Concepts](https://coderefinery.github.io/testing/concepts/)
+  - 9:30 - 9:55
+    [Testing locally](https://coderefinery.github.io/testing/pytest/)
+  - 9:55 - 10:05
+    Break
+  - 10:05 - 10:45
+    [Automatic testing with GitHub Actions or GitLab CI](https://coderefinery.github.io/testing/continuous-integration/)
+  - 10:45 - 10:55
+    Break
+  - 10:55 - 11:50
+    [Test design](https://coderefinery.github.io/testing/test-design/) 
+  - 11:50 - 11:55
+    [Conclusions and recommendations](https://coderefinery.github.io/testing/conclusions/)
+  - 11:55 - 12:00
+    Break
+- 12:00 - 12:30
   Project pitching and introductory meeting with mentors (hackathon participants only)
 
 #### *Day 2, March 24*
