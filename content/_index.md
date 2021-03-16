@@ -160,26 +160,26 @@ Optional requirements depending on which language you will be using:
 ### Schedule
 
 #### *Day 1, March 17*
-- 9:00 - 9:10
-  Welcome and practical information
+- 9:00 - 9:10 
+  Welcome and practical information (Thor)
 - 9:10 - 12:00
   [Software testing workshop](https://coderefinery.github.io/testing/)
   - 9:10 - 9:20
-    [Motivation](https://coderefinery.github.io/testing/motivation/)
+    [Motivation](https://coderefinery.github.io/testing/motivation/) (Thor)
   - 9:20 - 9:30
-    [Concepts](https://coderefinery.github.io/testing/concepts/)
+    [Concepts](https://coderefinery.github.io/testing/concepts/) (Thor)
   - 9:30 - 9:55
-    [Testing locally](https://coderefinery.github.io/testing/pytest/)
+    [Testing locally](https://coderefinery.github.io/testing/pytest/) (Diana)
   - 9:55 - 10:05
     Break
   - 10:05 - 10:45
-    [Automatic testing with GitHub Actions or GitLab CI](https://coderefinery.github.io/testing/continuous-integration/)
+    [Automatic testing with GitHub Actions or GitLab CI](https://coderefinery.github.io/testing/continuous-integration/) (Mark)
   - 10:45 - 10:55
     Break
   - 10:55 - 11:50
-    [Test design](https://coderefinery.github.io/testing/test-design/) 
+    [Test design](https://coderefinery.github.io/testing/test-design/) (Johan and Radovan)
   - 11:50 - 11:55
-    [Conclusions and recommendations](https://coderefinery.github.io/testing/conclusions/)
+    [Conclusions and recommendations](https://coderefinery.github.io/testing/conclusions/) (Johan and Radovan)
   - 11:55 - 12:00
     Break
 - 12:00 - 12:30
