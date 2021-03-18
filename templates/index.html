@@ -1,35 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row top-buffer-more">
+  {% if section.content %}
 
-  <div class="col-sm-12">
-
-    {% if section.title %}
-      <title>CodeRefinery - {{ section.title }}</title>
+    {% if config.extra.registration_is_closed %}
+      <a class="btn btn-danger disabled" href="#" data-mode="1" target="_blank">Registration is closed</a>
     {% else %}
-      <title>CodeRefinery</title>
+      {% if config.extra.registration_is_open %}
+        <a class="btn btn-success" href="{{ config.extra.registration_link | safe }}" data-mode="1" target="_blank">Register here</a>
+      {% else %}
+        <a class="btn btn-info disabled" href="#" data-mode="1" target="_blank">Registration will open soon</a>
+      {% endif %}
     {% endif %}
 
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-10">
-
-      {% if section.content %}
-        {{ section.content | safe }}
-      {% endif %}
-
-    </div>
-    <div class="col-md-2">
-      {% for logo in config.extra.logos %}
-        <a href="{{ logo.url }}">
-          <img src="{{ resize_image(path="logos/" ~ logo.image, height=260, op="fit_height") | safe }}"
-               alt="logo"
-               style="margin-top: 25px;">
-        </a>
-      {% endfor %}
-    </div>
-  </div><!-- row -->
+    {{ section.content | safe }}
+  {% endif %}
+  {% if page.content %}
+    {{ page.content | safe }}
+  {% endif %}
 {% endblock content %}
