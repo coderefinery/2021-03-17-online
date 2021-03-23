@@ -82,12 +82,16 @@ lessons learned.<br>
 #### *Day 2, March 24*
 - 9:00 - 9:15
   Introduction
-- 9:15 - 12:00
+- 9:15 - 10:30
+  Project work with mentors  
+- 10:30 - 10:45
+  Break
+- 10:45 - 11:45
   Project work with mentors
-- 12:00 - 12:20
-  Presentations of progress made and lessons learned
-- 12:20 - 12:30
-  Final words and post-hackathon survey.
+- 11:45 - 12:15
+  A walk through of lessons learned
+- 12:15 - 12:30
+  Final words and hackathon feedback.
 
 
 ### Instructors and mentors
