@@ -4,7 +4,7 @@ title = "Questions, answers, and feedback"
 
 ## Questions, answers and feedback
 
-**Live notes taken during the workshop on March 17**
+### Live notes taken during the workshop on March 17
 
  - I don't understand what is the difference between gitlab and github? I have also a gitlab account and could go into a Python gitlab room.
     - They are two online platforms for collaborating on code. They work quite similarly, but are owned by different companies.
@@ -251,7 +251,7 @@ Discussion from group 1: What are pure/impure functions in practice? Difficult t
 Test-driven development is like writing specification as testing code before writing the actual implementation code. Check the written conditions/criteria and translate them into tests according to the testing framework. E.g. "takes an integer argument" -> test_int_fizzbuss(). Writing the test forces you to learn more about the problem/what the implementation needs, e.g. validation of the type of argument and raising an error, e.g. TypeError for bad arguments.
 
 
-### Quick feedback
+#### Quick feedback
 
 Please write down one thing you liked and one thing you think should be improved!
 
@@ -263,7 +263,7 @@ Good:
 - Great to have an instance to work this excercises out with others.
 - Great organization, use of HackMD and instructing
 - Exercises are good but sometimes get complex. A universal online environment for everyone should be identified.
-- Radovan's ending comments on how to get started on existing codebase were really were good. (Maybe add them to the docs?)
+- ending comments on how to get started on existing codebase were really were good. (Maybe add them to the docs?)
 - Good overview about testing, gives me some inspiration for testing!
 - Very nice documentation but needed to be updated for version as we were wondering if differencies were due to different versions, however very comprehensive
 - Nice to have a session dedicated to testing and very interesting content !
@@ -295,3 +295,239 @@ To improve:
 - missing code repo were all groups could put their creative work
 - Would it be helpful to somehow differentiate breakout rooms according to participant skill level? I understand you could be more clear about prerequisites (e.g. everyone should have done a fork/clone/pull request on someone else's repo *before* the workshop if this is expected knowledge), but differentiating groups on skill could possibly facilitate the level of instructor time or how it is allocated. Some groups with more advanced participants may want to move forward on their own, with possibility for expert support, where other groups could aim to cover the basics and have support focused on this. Understand this is always a challenge though!
 - In one group I was in, the focus was a lot on just "getting done" for the first exercise, under silent and independent work. Could you perhaps clarify that participants shouldn't be afraid of asking questions, and that if you are done early, it is welcome to offer to help others who need it (if this is indeed the idea)? An ideal experience from the learner is probably to be in a group with people of the same skill level (approx), to know each other a little bit (to not be afraid to ask), and to get good help.
+
+---
+
+### Discussion during the hackathon on March 24
+
+
+- How to make sure that a temporary files gets deleted after the tests? Using fixtures maybe?
+    - one example from the testing lesson:
+    - Oh, I did use the example below but it still happened that the files did not get removed. I'll try again
+    
+
+```python
+import tempfile
+import os
+
+def test_count_word_occurrence_in_file():
+    _, temporary_file_name = tempfile.mkstemp()
+    with open(temporary_file_name, 'w') as f:
+        f.write("one two one two three four")
+    count = count_word_occurrence_in_file(temporary_file_name, "one")
+    assert count == 2
+    os.remove(temporary_file_name)
+```
+
+- Maybe the **shutil** package for file operations could be an option: https://docs.python.org/3/library/shutil.html
+    One example here: https://stackoverflow.com/questions/62210497/how-to-automatically-delete-temporary-files-generated-during-pytest
+
+    - Working example:
+
+```python
+import shutils
+
+@pytest.fixture
+def tdir():
+    """Create a temporary testing dir"""
+    tmpdir = tempfile.mkdtemp(prefix='test-doconce-')
+    yield tmpdir
+    shutil.rmtree(tmpdir)
+    
+def test_myprog(tdir):
+    finput = 'testdoc.txt'
+    #cp files to temporary directory
+    shutil.copy(finput, tdir)
+    #run myprog in bash
+    out = subprocess.run(['myprog','arg1', 'arg2', finput, '--examples_as_exercises'],
+                         cwd=tdir,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT,
+                         encoding='utf8')
+    print(out.stdout)
+    assert out.returncode == 0
+```
+
+- hard-coded paths and adjustable parameters inside the main code make it difficult to design tests
+    - one solution is to use config files. In Python, configparser library is convenient
+
+- in Python, always use a requirements.txt or environment.yml file!
+
+- testing Deep Learning methods is tricky!
+    - DL practioners, do you test your DL workflow?
+    - Fixed seed
+    - Check that the model can overfit on small amount of data
+    - Not really testing, but inspect the data manually (plot it)
+
+##### team 1
+
+We focused on the importance on having well written code which is easily portable across platforms. We implemented relative paths coding.
+
+We learned that if you write a function thinking about "how to test it" it is much easier to write clean code.
+
+We got familiar with python
+
+
+
+##### team 2
+
+
+- Complex code often has (a lot of) dependencies (e.g. compilers) which are hard to disentangle
+- First step for regression testing is that code compiles
+- pFUnit is a capable unit testing tool but has quite a lot prerequirements to run (e.g., CMAKE, ifort > 18)
+- pure functions are much easier to test compared to functions/subroutines which depend on each other --> to fix this it would requires a change in the coding strategy
+
+##### team 3
+
+- Catch2 is a convenient unit testing framework: allows easy way for Behaviour Driven Design, incorporates well into CMake.
+- One needs to make sure the input values in the tests fall within reasonable values and also test for the unreasonable inputs (the code should handle those inputs via asserts or exceptions).
+- events in GUI applications can be tested:
+    - either using tools for inspection of graphical events 
+    - or by using a log file.
+
+##### team 4
+
+- Tests have several orthogonal ways of being described:
+    - framework orchestrating the tests (GoogleTest, pytest, Catch2, DocTest)
+    - who provides truth (regression tests assuming the old code was right (no it is for checking if something has changed), comparison tests assuming simple current code is right, oracular tests where some physical or mathematical property provides truth)
+    - how much code is tested (unit, integration, end-to-end)
+- Extracting dependencies can make code more testable, moves code closer to object-oriented design. However, data-driven design can be more performant, so compromises might be needed
+- When proposing new science projects or code features, discuss testing up front. How will we know the observations are new science or code defect?
+- Consider designing tests before a new feature is implemented.
+- Support more than one compiler to get more feedback and write fewer bugs to catch in testing. Clang can compile and run CUDA code, not just nvcc. Multiple compiler support can also lead to improved code portability.
+- Consider Sanitizers for memory, address, undefined behavior, leak, thread errors
+- Consider AWS CodeBuild for GPU CI testing - the free tier might be enough for you to get some automated coverage
+- Otherwise, free CI will at least compile GPU code if you can automate setting up the dependencies
+- Do exactly what the user says. Do not do something "clever", i.e. assuming that the user wants something else than he/she told the program to do. If the user was vague, then be clever. Just don't contradict them!
+- Setting up code coverage testing can give valuable high-level feedback about how the code has changed. This can be helpful when arguing for funding. But beware of spending time chasing "complete" coverage - you probably have better ways to spend time.
+- Research code often has a "conflict of interest" between developers and the PIs/drivers/funders of the projects, and/or it often feels like there is too little time to do proper testing. To improve the situation, try to find a way to prioritize what to test. Test coverage and looking for coverage gaps (e.g. with Gcov) might a useful approach. Test all new code versus old code when possible. One approach can be to profile to see which functions are used the most frequently, but this doesn't necessarily mean they should have a high priority.
+- Some tools that might be helpful: sanitizer toolsets, thread sanitizers, run-time vs static analyzers, valgrind, cuda-memcheck, cppcheck...
+- Add tests that cover areas that are expected to change
+- Remove legacy tests after considering what coverage change that makes
+
+##### team 5
+
+- We ended up learning a lot. Parametrized testing, regression tests (with and outout storing files) and end-to-end tests.
+    - Any tip/code snippet for doing regression tests? Is it done on git or in pytest?i
+    - We ran the regression tests ourselves and copy-pasted the expected results into a test function. In other cases we stored the expected result in a .npz file. Example:
+        ```python
+        @pytest.mark.parametrize("mean,var,expected",[
+                            (2,3.5,[[8.17418321], [3.40055023]]),
+                            (3.141592653589793,2.6457513110645907,[[7.80883646],[4.20030911]]),
+                            (-1e-09, 1000000.0,[[1764052.34596766],[400157.20836722]]),
+                            (1.7724538509055159, 0, [[1.77245385],[1.77245385]])
+                        ])
+        def test_Normal_sample_regression(mean,var,expected):
+            rng = np.random.RandomState(0)
+            samples = cuqi.distribution.Normal(mean,var).sample(2,rng=rng)
+            target = np.array(expected)
+            assert np.allclose(samples,target)
+        ```
+- Compared to zero testing one week ago, we now have a working automated test pipeline in Gitlab, with multiple unit tests and at least one end-to-end test.
+- We spent a good amount of time on handling RNG and ended up with a pretty good solution thanks to Roberto!
+- As a byproduct we also got to exercise collaborative git and gitlab workflows including rebases, merge request reviewing, as well as setting up a mirror repo to give access rights to Roberto.
+
+##### team 6
+
+- There were many existing tests, but they were run via a shell script and you needed to do manual comparison.
+- We created a fixture to work on a temporary directory (see code in Q&A above)
+- capture STDOUT STDERR (see my Q&A above)
+- tip: run `pytest --pdb` (it opens a debugger when a test fails)
+    - Thanks for this suggestion :) 
+    - Aha! TIL 
+- Testing shell functions is hard, because they depend on the environment.  But it can be done.
+- Working directories and relative pathnames require some care to get correct
+
+##### team 7
+
+- Step-1: needed to find a platform to run/test code (we won't use HPC for testing the simple code). Tried google console & mybinder
+- Put the code in a repository
+- Installed PFunit used to test for Fortran. Used a square example to make sure we could compile Ok. Broke it and fixed it.
+- started to design a test for interpolation code but still some work to do.
+- Got some experience with updating the github repository, and then pulling back to the local machine
+- Learnt to use HackMD
+- Did not finish!
+
+##### team 8
+
+- Comparing different dictionaries -- deepdiff (https://github.com/seperman/deepdiff#a-few-examples)
+- Dependencies within the code base
+- Splitting tests into smaller units, always try to split it
+- Setting up the environment, or compiling dependencies
+
+
+
+##### team 9
+
+- Countinous Integration tests is an indispensable tool to find issues related to target platforms.
+    - Found alot of issues by having the different compilers and platforms
+- UTest is a small, fast and lightweight testing framework for C and C++.
+    - https://github.com/sheredom/utest.h
+  - nice find! I did not know about this one. 
+- Integrates nicely into Cmake CTest. (Thanks mentor! :))
+- Unittests are needed!
+
+##### team 10
+
+- We learned about arranging tests in a hierarchical manner to match the project structure
+- Learned about using pytest.fixture decorator
+- Got some great advice in general, e.g. dataclasses and pathlib packages
+- Discussed optimal class development
+- Found a couple of bugs...
+
+
+##### team 11
+
+- Learned to make a config file
+- Designed an end-to-end test
+- Created a class 
+- Discussed best practices in collaborative coding such as branching, pull requests etc.
+- Learnt about creating environments (.yml files)
+- Many suggestions about coding style
+- Many suggestions about best practices in deep learning training
+- Many other useful suggestions such as glob, os.path.split, context manager etc.
+
+---
+
+#### Feedback
+
+Are hackathons useful? 
+Would you like to attend hackathons with other themes in the future? If so, which themes? 
+Any suggestions for improving the format?
+
+- Hackathon theme suggestion: preparing your code for publication, and/or for going open source. :+1: 
+- Hackathon/workshop suggestion: how to document & comment (large) software projects :+1:
+- A refactoring workshop/hackathon with best practices presented, maybe some checklist what to look at/for, spaghetti code to modular code
+- It was absolutely useful which helped to debug testing process when using nbdev. Thanks a lot to my mentor for clearing all our issues. 
+- Absolutely useful. It motivates me to work on my project and I am inspired by your knowledge. You are a good inspiration to become better. I think a hackathon should be longer.
+- Extremely time well spent. Having a chance to go through our own project with an expert is unique possibility. :+1:
+- Hackathon on documentation!!! :+1::+1::+1::+1::+1:
+- I can't believe this is free by the way. Great job. :+1:
+- Great workshop, thanks a bunch! A bit of feedback/reflection: it was very easy for the hackathon to turn into a Q&A with little to no hacking. This is of course up to the participants and can still be very helpful. After all, each group should maybe use their mentor in the way that suits them the best. But if there is an expectation/desire to do live pair programming, maybe give more instructions to mentors, or use the short meeting with the mentor on the first day to set up a "homework" for a particular test or piece of code to go through in the second day (during the hackathon).
+    - This is an impotant point! The quality of the hackathon may depend on the mentor -- so aligning the type of teaching/pair-programming may help. In our group we divided out "homework" that was then reviewed later, very useful.
+
+- my lesson learnt:
+  - old-style *vs* new-style random number generation in NumPy. One should prefer new-style (where *both* seed *and* PRNG algorithm are explicitly set), but it doesn't play well with the more well-known old-style, where the PRNG is part of the global state..
+    - do you have a link/example of the new style?
+      * this shows both: https://numpy.org/doc/stable/reference/random/index.html#quick-start
+      * https://numpy.org/doc/stable/reference/random/new-or-different.html#new-or-different
+      * New-style offers more flexibility when you need *multiple streams* for parallel applications (*e.g.* the Philox generator or PCG64/MT19937 with jump-ahead)
+         - awesome. thanks!
+  - utest is yet another unit test framework for C/C++. Very lightweight.
+
+- my lessons learned:
+  - one can actually automatically test jupyter notebooks
+  - learned about https://nbdev.fast.ai/
+  - learned how to compare Python dictionaries using https://github.com/seperman/deepdiff
+  - mentoring more than 2 groups is not practical. sorry to each group that I had so little time
+  - learned more about pytest fixtures: https://docs.pytest.org/en/stable/fixture.html
+
+- my lessons learned:
+    - use the standard library when possible
+    - learned how to use pytest when the test func are defined in several subdirectories
+    - learned that one may mimic GitHub action on my laptop https://github.com/nektos/act
+    - a great oportunity to see what kind of tests are appropriate depending on the project
+    - as always, Google is your best friend but it does not beat a mentor :)
+    - do what works for you / your project
+
+
