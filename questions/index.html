@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="https://coderefinery.github.io/2021-03-17-testing-hackathon/img/favicon.ico">
+
+    
+      <title>Questions, answers, and feedback</title>
+      <meta name="twitter:title" content="Questions, answers, and feedback" />
+    
+
+    
+      <meta name="description" content="" />
+      <meta name="twitter:description" content="" />
+    
+
+    
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://raw.githubusercontent.com/coderefinery/coderefinery.org/main/content/logo/coderefinery.png" />
+    
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://coderefinery.github.io/2021-03-17-testing-hackathon/css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main role="main">
+      <div class="container">
+
+        <div class="row top-buffer">
+          <div class="col-sm-12">
+            <h1>Online CodeRefinery Workshop and Hackathon on Software Testing</h1>
+          </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              
+                
+                  <a class="nav-link" href="https://coderefinery.github.io/2021-03-17-testing-hackathon/">Schedule</a>
+                
+              
+                
+                  <a class="nav-link" href="https://coderefinery.github.io/2021-03-17-testing-hackathon/audience/">Who the course is for</a>
+                
+              
+                
+                  <a class="nav-link" href="https://coderefinery.github.io/2021-03-17-testing-hackathon/join/">How to join</a>
+                
+              
+                
+                  <a class="nav-link" href="https://coderefinery.github.io/2021-03-17-testing-hackathon/requirements/">Requirements</a>
+                
+              
+                
+                  <a class="nav-link" href="https://coderefinery.github.io/2021-03-17-testing-hackathon/questions/">Q&amp;A</a>
+                
+              
+                
+                  <a class="nav-link" href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>
+                
+              
+                
+                  <a class="nav-link" href="https://github.com/coderefinery/2021-03-17-testing-hackathon">Improve this page</a>
+                
+              
+            </ul>
+          </div>
+        </nav>
+
+        <div class="row top-buffer">
+          <div class="col-sm-10">
+            
+  
+  
+    <h2 id="questions-answers-and-feedback">Questions, answers and feedback</h2>
+<h3 id="live-notes-taken-during-the-workshop-on-march-17">Live notes taken during the workshop on March 17</h3>
+<ul>
+<li>
+<p>I don't understand what is the difference between gitlab and github? I have also a gitlab account and could go into a Python gitlab room.</p>
+<ul>
+<li>They are two online platforms for collaborating on code. They work quite similarly, but are owned by different companies.</li>
+<li>Yes, I know :-) But I use the same git commands to push.
+<ul>
+<li>Both use git for version managment (hence the same commands), but the features are different between the two platforms (testing, actions, etc)</li>
+</ul>
+<ul>
+<li>The exercise will show how to run tests automatically on the two platforms when you push changes. (Behind the scenes, git knows which repository you originally cloned, whether gitlab, github or something else. So after you clone, very little differs.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>for the code refinery workshop it was possible to get graduate school credit (at Tu Delft). Is it possible to get a certificate for this workshop as well to get GS credit?</p>
+<ul>
+<li>certificates can be requested via email to support@coderefinery.org
+<ul>
+<li>if credits can be given from university depends on your university</li>
+<li>great thanks!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>How does the assert function work?</p>
+<ul>
+<li><code>assert(cond, message)</code> checks whether the given condition evaluates to true. If it is false, the message is printed (sometimes along with the condition) and the program terminates. In case of true, the program continues.</li>
+</ul>
+</li>
+<li>
+<p>Is it best to include tests in the same script file or to organize specific test files ?</p>
+<ul>
+<li>It will depend on the facilities your language offers for testing. In Python, for example, you can do both and <code>pytest</code> will be able to find and run them all. In C++, they need to be in other files. Personally, I prefer tests to be in a separate folder, regardless of the language I am using. If you're starting to work on a new project, it's very instructive to look at the tests to understand what the code does and with which functions in the codebase. If tests are in separate files in separate folders, then this exploration is much easier.</li>
+</ul>
+</li>
+<li>
+<p>Will we be trying mock in Python?</p>
+<ul>
+<li>There are no explicit exercises on mocking, but we can discuss examples later on, I think.</li>
+</ul>
+</li>
+<li>
+<p>What does CD stand for, please? I saw CI/CD, I think.</p>
+<ul>
+<li>Continuous integration (CI) and continuous delivery (CD). The former is running tests automatically on a regular schedule: usually, but not necessarily on every commit pushed to the remote repository. The latter is the automated deployment of the &quot;artifacts&quot; of your code on a regular schedule (could be on every push). The deployment might be uploading a Python package to the Python package index (PyPI) or running a new version of a web application on a server that your users interact with.</li>
+</ul>
+</li>
+<li>
+<p>(moved from above) If i have functions that do not perform very specific calculation, but they do operate and modify a class of inputs (i.e. high pass filter on an image), how do i test them?</p>
+<ul>
+<li>
+<p>In the test code, I would save a reference input and reference output files, run the code on the former and then check that the new output matches the reference one.</p>
+<ul>
+<li>Consider also refactoring the original code, so that you do not modify the input but rather make a copy and return it as output. This will incidentally help the modularity and reusability of the code. However, if the resources (memory, CPU) to copy are very expensive, you might not follow this strategy.</li>
+<li>Another option is to create a very small input set where you already know the result (or can compute it yourself). For example sampling or filtering a small 2D grid. Or an image where the high pass filter returns a trivial result, like all black.</li>
+</ul>
+</li>
+<li>
+<p>Can I customize the name of the test in pytest?
+- yestest?
+- yes</p>
+</li>
+</ul>
+</li>
+<li>
+<p>What does the pytest return exactly?</p>
+<ul>
+<li>Each function named <code>test_</code> should return either <code>True</code> or <code>False</code>. Running pytest aggregates the results and prints them to screen nicely.</li>
+</ul>
+</li>
+<li>
+<p>I had the test to fail. Function returns a-b. The test should assert add(2,3)==5. I get</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">  assert add(2, 3) == 5
+</span><span style="color:#1f1f1f;">    E       assert -1 == 5
+</span><span style="color:#1f1f1f;">      E         +-1
+</span><span style="color:#1f1f1f;">  </span><span style="color:#1f1f1f;">  E         -5
+</span></code></pre>
+<ul>
+<li>There is a + in front of 1, not --1 as shown in the example. Same for 5.  We wondered if there is some version control in the pytest.
+<ul>
+<li>The <code>+</code> and <code>-</code> work as in a patch you obtain from version control: &quot;I expected 5 (<code>-</code>) but found -1 (<code>+</code>)&quot; I am not sure why it's different  in the published material.
+<ul>
+<li>I still don't understand. The <code>+</code> indicates what, please, for example?
+<ul>
+<li>The test was expecting the value <code>5</code> to be present, but found the value <code>-1</code>. This means that <code>-1</code> was <em>added</em> to the output, hence the (<code>+</code>) by its side, while <code>5</code> was <em>removed</em>, hence the (<code>-</code>) in front.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What is a good way to set the acceptable tolarance for floating point comparisons across an entire test suite? Should/could this be an external flag or part of the tests? And should one add checks to verify the precision of the interpreter running the tests?</p>
+<ul>
+<li>That really depends on what you are testing for. By default, floating point numbers in Python are double precision, so the predefined thresholds in pytest and numpy are geared towards that.
+<ul>
+<li>I suggest against this, unless the kind of logic that computes float-point numbers is always the same. You don't want to force yourself to have very sloppy testing of numbers that are very reproducible, just because some of the other numbers are computed in a way that is less reproducible.
+<ul>
+<li>Ideally, you understand the algorithm that computes the floating-point number and can reason about what range makes sense. For example, accumulating a sum over a vector has an absolute bound on the range of results, depending on the order of accumulation, but that bound depends on the values in the vector... (But this is a big topic in its own right!)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Why do other calculations like 0.1 + 0.4 work correctly?</p>
+<ul>
+<li>In that case, the result (0.5) can be represented exactly as a floating-point number, and it’s possible for rounding errors in the input numbers to cancel each other out - But that can’t necessarily be relied upon (e.g. when those two numbers were stored in differently sized floating point representations first, the rounding errors might not offset each other).
+<ul>
+<li>In other cases like 0.1 + 0.3, the result actually isn’t really 0.4, but close enough that 0.4 is the shortest number that is closer to the result than to any other floating-point number. Many languages then display that number instead of converting the actual result back to the closest decimal fraction.</li>
+<li>https://floating-point-gui.de/basic/</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>(from zoom chat)how do you test when you using Spyder?</p>
+<ul>
+<li>
+<p><code>!pytest -v example.py</code></p>
+</li>
+<li>
+<p>Is it the same like <code>!ls</code> in a notebook, i.e. executing a terminal command?
+- yes, same idea, to run non-python commands</p>
+</li>
+</ul>
+</li>
+<li>
+<p>I am not able to rename myself with the group name in Zoom.</p>
+<ul>
+<li>can you not hover over your name in the Participants list, click &quot;More&quot;, and then &quot;Rename&quot;?
+- Answer: yes, thank you.
+- Great!</li>
+</ul>
+</li>
+<li>
+<p>How to run tests in Jupyter notebook? Do we need to run through command prompt ?</p>
+<ul>
+<li>you could use <code>!pytest test.py</code> if you have your tests in a separate script (test.py) from within a codecell in the jupyter notebook
+<ul>
+<li>there seem to also be plugins for jupyter notebooks, such as https://pypi.org/project/pytest-notebook/ (no experience with those)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise until 10:45</strong></p>
+<ul>
+<li>
+<p>How big allocation does a repo get in terms of testing? Could too long test times be limited by Github?</p>
+<ul>
+<li>often it's ~ 1 hour per task/workflow and often you can run several of them at the same time. if the test set takes hours, then it won't fit there but then you can connect your own test runner (can be an idle computer or some cloud computing resource) to e.g. GitLab CI and then they can be in principle arbitrary long.</li>
+</ul>
+</li>
+<li>
+<p>Could you comment on what Mark means with targeting different use cases by github and gitlab, please?  Thank you.</p>
+<ul>
+<li>They're useful for the same use cases. They just are built differently by different people and the feature sets suit the people who paid for them to be built. For our purposes, they're the same.</li>
+</ul>
+</li>
+<li>
+<p>Not sure about pt 4: &quot;Also browse the “Actions” tab and look at the steps there and their output.&quot;</p>
+<ul>
+<li>There you can see what actions have run, e.g. https://github.com/mabraham/testing-workshop-mark/actions
+- Ok, I think my tests are not running, that's why I cannot see anything (see the point below)
+- Make sure you followed the steps to enable automated testing.</li>
+</ul>
+</li>
+<li>
+<p>Is it possible to run the GitHub actions inside a singularity container</p>
+<ul>
+<li>You should check the GitHub marketplace to see whether there's a pre-packaged action. It is possible to run inside a Docker container, so it should be possible to run within Singularity.</li>
+</ul>
+</li>
+<li>
+<p>this exercise is not working for me, it seems like I'm missing a &quot;runner&quot;. I'm using my TU Delft gitlab account, perhaps there are no &quot;runners&quot; configured.</p>
+<ul>
+<li>right. we were somehow assuming that gitlab would be gitlab.com. we need to clarify this for later workshops that other gitlab servers may not be connected to runners yet.
+<ul>
+<li>to investigate, in the left-hand menu, scrolling down to settings, then find &quot;CI/CD&quot; submenu under it. Then you will see if the shared runners are available.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>To allow actions in your fork of a repository on GitHub you need to activate them by clicking Actions and enabling them. What are the risks of enabling actions a forked repo under your GitHub account?</p>
+<ul>
+<li>I don't see any risks. This can be useful if you want to test your changes automatically before sending a pull/merge request to &quot;upstream&quot;. Note that you don't need to activate actions on the fork to get pull requests upstream automatically tested.</li>
+</ul>
+</li>
+<li>
+<p>Can we have more time?</p>
+<ul>
+<li>some of us can stay a bit after the workshop, if you would like to continue this exercise (breakoutrooms will stay open)</li>
+</ul>
+</li>
+<li>
+<p>(moved from zoom chat) What should one consider regarding resource limitation on GitHub actions?</p>
+<ul>
+<li>https://docs.github.com/en/actions/reference/usage-limits-billing-and-administration#usage-limits
+You have a hard 10GB limit on disk space.</li>
+</ul>
+</li>
+<li>
+<p>Why does a test can take hours, please?</p>
+<ul>
+<li>a test could be an end-to-end test and test the whole code (we will see that later) and depending on the program it can take arbitrarily long. but it is good if tests only take seconds or minutes since it can make development easier</li>
+</ul>
+</li>
+<li>
+<p>GitLab only creates a merge request across different branches. Gives an error when the merge is from master to master. Is that right?</p>
+<ul>
+<li>Yes, merges and pull requests only make sense between different branches (ie including a branch of the same name in a different repo)</li>
+</ul>
+</li>
+<li>
+<p>Pt 5 does not break the tests in my repo. My hunch is that he tests are not running because of some silly syntax mistake.</p>
+<ul>
+<li>You should have used the &quot;Python package&quot; action. The one you are using is for publishing the pacakge to PyPI and will only run when you create a new release.
+- thank you, what now? can we talk?
+<ul>
+<li>solved
+<ul>
+<li>Thank you. I had a yml triggering every release, which is not good. Therefore I created a new workflow with of type &quot;Python application&quot;, then the .yml file was created in the wrong place, so I had to move it to .github/workflows</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>in github/workflows/python-app.yml i got n error &quot;every step must define a <code>uses</code> or <code>run</code> key&quot; what that means?</p>
+<ul>
+<li>probably you made a typo, like wrong numbers of spaces in the indenting. Copy the example carefully and it will work.
+<ul>
+<li>I also had it, it was due to a dash before the <code>run</code> command</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>in the background, does the testing takes place in a container? (I noticed <code>ubuntu-latest</code> in the yml file.) Would this entail all the (environmental) cost of spinning up a container?</p>
+<ul>
+<li>yes indeed. it creates a container, runs the tests, and then destroys the container. and you can also use own containers instead. That adds a tiny amount of overhead compared with no container, but you don't have an option about that. Running automated tests does indeed have an environmental cost, as a computer somewhere is doing more work than it would otherwise have done.
+<ul>
+<li>thanks!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If we have multiple code files in repository then we need to add line for every file including test in Github Action workflow?</p>
+<ul>
+<li>this depends on the project language and test runner. if this is about pytest, then it can also gather all tests in a python package so it is not necessary to add one line for each file. (if i understood the question correctly)
+<ul>
+<li>For example, a C++ project using CMake with CTest would register each test binary (or python script) with CTest, which would be run by &quot;make test.&quot; Now only that line needs to be part of the workflow .yml file, but that's your choice.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Why does github asks me again all the time for login/password? Last week I worked on a different repo on github, now I am working on the repo for the coderefiner workshop and it has started to ask me before every push. How does git know to push to which repo when I work on several, please?</p>
+<ul>
+<li>If you cloned using SSH (<code>git clone git@....</code>), it will use public-key authentication and <em>not</em> ask for a password. If you cloned using HTTPS (<code>git clone https://</code>), then it will ask for a password. When working on a repo that is not yours, the default is anonymous HTTPS clone.
+<ul>
+<li>Thank you. I was lazy and did <code>git clone https://</code> I did not know about the git@ prefix. Can I fix this still, please?
+<ul>
+<li>You can get your hands dirty with <code>git remote rm origin</code> and then <code>git remote add origin git@whatever-it-is</code> and then teach each local branch  which branch of the remote it should track. Much easier to just clone with <code>git@whatever-it-is</code> separately (or follow the advice below!)
+<ul>
+<li>or: <code>git remote set-url origin git@someaddress</code> which will change to <code>git@someaddress</code> from whatever it was before</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Exercise until 11:47</strong></p>
+<p>Please also write here questions or surprising/interesting findings which can be good for other groups.</p>
+<ul>
+<li>
+<p>Any test case to test the factorial can only test a finite sample. Testing the first few instances is prone to missing deviations at large n. I think it might make sense to test whether factorial(n+1)=(n+1)*factorial(n) where n can be a random integer greater than 1 (maybe not too large ...).</p>
+<ul>
+<li>good approach! sometimes you have two functions that implement the same thing. a simple, obviously correct, slow function, and a more complex fast function. and then it can be useful to compare both for a random set of input values and design a test this way.
+<ul>
+<li>yes, that would be a better approach: it's called <em>property-based testing</em> and in Python you can use the Hypothesis library to help you with generating test sets.
+<ul>
+<li>sometimes you can even test exhaustively every possible input value and compare it to some source of truth (e.g. that a fast, complex, hard-to-read implementation does the same as a slow, simple, comprehensible one)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Can I use print statements with the pytest test functions?</p>
+<ul>
+<li>Yes. More info here: https://docs.pytest.org/en/stable/capture.html?highlight=print%20statement
+<ul>
+<li><code>pytest -s myfile.py</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>When testing randomness in Python. Is there a good way to fix the seed within the function, but not change the global seed that is used for the other tests? (One idea I just had to was to extract the current seed, set a seed (1), run function, then restore the original seed?)</p>
+<ul>
+<li>I believe you need to use an external library implementing pseudorandom generators or even use a completely different generator.
+<ul>
+<li>Refactor the function so that it does not have the external dependency on a global rng, but rather a specific one. Now you can control that in the test, while letting the normal code use the global one. (y)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Why does pytest not find my file? Terminal output and file content below.</p>
+</li>
+</ul>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">username@machine:~/pytest-example$ pytest test_yahtzee.py
+==================================================================================== test session starts =====================================================================================
+platform linux2 -- Python 2.7.18, pytest-4.6.9, py-1.8.1, pluggy-0.13.0
+rootdir: /home/username/pytest-example
+collected 0 items                                                                                                                                                  =============================================================================== no tests ran in 14.43 seconds ================================================================================
+</span></code></pre><pre style="background-color:#f5f5f5;">
+<code class="language-python" data-lang="python"><span style="color:#7f8989;"># The following is test_yahtzee.py
+###########################################################
+</span><span style="color:#72ab00;">from </span><span style="color:#1f1f1f;">yahtzee_library </span><span style="color:#72ab00;">import </span><span style="color:#b3933a;">*
+
+</span><span style="color:#1f1f1f;">num_games </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">1000000
+
+</span><span style="color:#1f1f1f;">winning_games </span><span style="color:#72ab00;">= </span><span style="color:#a2a001;">list</span><span style="color:#1f1f1f;">(
+    </span><span style="color:#b39f04;">filter</span><span style="color:#1f1f1f;">(
+            </span><span style="color:#72ab00;">lambda </span><span style="color:#5597d6;">x</span><span style="color:#1f1f1f;">: x </span><span style="color:#72ab00;">== </span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">,
+	            [</span><span style="color:#5597d6;">yahtzee</span><span style="color:#1f1f1f;">() </span><span style="color:#72ab00;">for </span><span style="color:#5597d6;">_ </span><span style="color:#72ab00;">in </span><span style="color:#b39f04;">range</span><span style="color:#1f1f1f;">(num_games)],
+		        )
+			)
+			</span><span style="color:#7f8989;">#print(100 * len(winning_games)/num_games)
+			</span><span style="color:#72ab00;">assert </span><span style="color:#b39f04;">abs</span><span style="color:#1f1f1f;">(</span><span style="color:#b39f04;">len</span><span style="color:#1f1f1f;">(winning_games)</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">num_games </span><span style="color:#72ab00;">- </span><span style="color:#b3933a;">0.046</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">1
+			</span><span style="color:#7f8989;">###########################################################
+</span></code></pre>
+<ul>
+<li>
+<p>it looks for functions that start with <code>test_</code> and runs them</p>
+</li>
+<li>
+<p>But the file is called test_yahtzee.py</p>
+<ul>
+<li>inside there you need to create a function <code>test_something()</code> and move the test under that function
+<ul>
+<li>Thanks! :)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What if the code imports external packages? Referring to &quot;4. Function with an external dependency&quot;. What if it's not a simple value, but a complicated function</p>
+<ul>
+<li>It's normally a good idea to wrap external packages with a layer that you control that gives you the ability to e.g. swap it for another package (or version of the same package), either for testing or actually switching packages. So if you do that, then the dependency problem is easier. Also, you can refactor the code from <code>code_to_test()</code> to look like <code>value = get_from(dependency); code_to_test(value);</code></li>
+</ul>
+</li>
+<li>
+<p>I read in the past that an impure function is also when, for example, the text input <code>mytext</code> is modified and the function returns <code>mytext</code>. Do you see problems with this types of functions?</p>
+<ul>
+<li>
+<p>any function which accesses the disc or keyboard or internet or database is inherently impure since the disc and keyboard and internet are &quot;time-dependent&quot; and will change from call to call. but functions which access files can still be tested (see one example in test design) by creating a temporary file or temporary database, run the function, verify the result, then destroy the temporary file/database. in practice i would recommend to move the I/O (file/internet/database-access) to the &quot;outside&quot; of your code and keep the &quot;inside&quot; of your code pure and stateless and easy to test.
+- but this function, which does not access the disc or anything, is it impure and potentially problematic? Notice that it modifies the input variable only inside the scope of the function and then returns it. I am asking because it is relevant to the code I am working on.
+```
+def add_x_to_input(mytext):
+mytext = mytext + 'x'
+return mytext</p>
+<pre style="background-color:#f5f5f5;">
+<code>  mytext='some text'
+  mytext = add_x_to_input(mytext)
+  ```
+</code></pre>
+<ul>
+<li>this function can be considered pure: given an input it will always produce the same output. and it does not modify any variables outside the function. although it looks like it would modify <code>mytext</code>, it modifies its copy and returns a new value which you then choose to put into the same &quot;container&quot; but the function itself does not modify the input <code>mytext</code> hence I would call this one pure.
+<ul>
+<li>Right, cause strings are immutable. Cool, thank you.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>How do you test functions that render file formats, such as images?</p>
+<ul>
+<li>understand what you expect the behaviors to be
+<ul>
+<li>have a set of test images and record the results so you can compare them pixel-by-pixel in future, but you'll need a human to decide up front that those results actually are good</li>
+<li>i find this approach useful: what do you look at to decide whether the generated image is correct? now write these criteria down. can you put these criteria into code? (this is the difficult part). once you have the criteria written in any language, you have a test. i know it's not easy but defining and writing down these validation criteria can be a useful exercise.
+<ul>
+<li>more practically: you could store the checksums of generated images for a series of input parameters and check whether you regenerate the same result by comparing the checksum.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>More on the previous question: say that my program converts some text file to a text file e.g. html. how to write tests there? For example, testing that a link in my output is written in the correct syntax and points to some paragraph in the output itself, but avoid whitespaces or whatever changes in the html syntax that are not relevant.. One could probably do this, but if you know of any syntax-aware library (for html or markdown or python) or tips let me know</p>
+<ul>
+<li>just to make sure I understand: you are looking for a library that can validate html and markdown and check internal links?
+- Well, maybe. I am wonder how you would write tests for software that converts from one text format to another, e.g. to html (but not only). I cannot diff some reference html file vs the html output as is because, for example, some .js file in the <code>&lt;head&gt;</code> will change in time, I don't want line breaks or comments to make tests fail, etc. I should probably massage the html output/use regex before diff-ing. It sounds like a hassle.
+- I discussed it with Thor and I should probably start testing on my low-level functions in my software and go from there.</li>
+</ul>
+</li>
+<li>
+<p>Interesting: I asked what was the difference between <code>master</code> and <code>main</code> in git.</p>
+<ul>
+<li>It is the same, but the <code>main</code> syntax is more inclusive</li>
+</ul>
+</li>
+<li>
+<p>Do you have any possible answer to the section Designing an end-to-end test <a rel="noopener" target="_blank" href="https://coderefinery.github.io/testing/test-design/">here</a>?</p>
+<ul>
+<li>sorry we need to create a solution and I only created the problem yesterday but in this particular case I would keep a folder with inputs and outputs and the end to end test would loop through all inputs, run the code, and compare the produced output with each reference output. in this case one could compare strings precisely, whether they are identical. if the code produced floats, one would have to compare with numerical tolerance. sometimes code produces results but also prints times and dates and timings and then one needs to do some filtering.</li>
+</ul>
+</li>
+<li>
+<p>How do you test functions that rely on external API calls? Maybe with a focus on API:s that may be subject to change, is that defensive programming rather than testing?</p>
+<ul>
+<li>here my focus would be to test this often/frequently so that once things change, i notice this. one can run scheduled tests on github which are run every day/week/month. there are also tools that focus on testing API changes/degradation (i am not using them myself but only saw that they exist)
+<ul>
+<li>You'd need both. The tests help you understand what has changed. Then your code can be changed to react accordingly, e.g. support multiple versions. Key here is that you wrap the external API in a layer that you control. That lets you make observations (ie run tests) before it gets into the core components of your code. Maybe you can introduce a change in the layer that means your core components are insulated from the change to the external API.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Discussion from group 1: What are pure/impure functions in practice? Difficult to test functions that render files or rely on external API:s. Randomness is complex and inticate. We chose test-driven development.</p>
+<p>Test-driven development is like writing specification as testing code before writing the actual implementation code. Check the written conditions/criteria and translate them into tests according to the testing framework. E.g. &quot;takes an integer argument&quot; -&gt; test_int_fizzbuss(). Writing the test forces you to learn more about the problem/what the implementation needs, e.g. validation of the type of argument and raising an error, e.g. TypeError for bad arguments.</p>
+<h4 id="quick-feedback">Quick feedback</h4>
+<p>Please write down one thing you liked and one thing you think should be improved!</p>
+<p>Good:</p>
+<ul>
+<li>Nice overview on existing testing strategies</li>
+<li>Great concepts and test design sections</li>
+<li>Very good onboarding process. I was scared of implementing testing, now I look forward to it.</li>
+<li>Great intro with good pace, will join similar things in the future</li>
+<li>Great to have an instance to work this excercises out with others.</li>
+<li>Great organization, use of HackMD and instructing</li>
+<li>Exercises are good but sometimes get complex. A universal online environment for everyone should be identified.</li>
+<li>ending comments on how to get started on existing codebase were really were good. (Maybe add them to the docs?)</li>
+<li>Good overview about testing, gives me some inspiration for testing!</li>
+<li>Very nice documentation but needed to be updated for version as we were wondering if differencies were due to different versions, however very comprehensive</li>
+<li>Nice to have a session dedicated to testing and very interesting content !</li>
+<li>Very nice that you catch questions from the chat and bring them to the speaker's attention. Thanks!</li>
+<li>Good and quick answers to the questions asked in the HackMD.</li>
+</ul>
+<p>To improve:</p>
+<ul>
+<li>CI/CD did not work for institutional gitlab accounts with no configured runners</li>
+<li>not Familiar with Github so struggled there</li>
+<li>maybe add example of test cases for one particular function (e.g. range checks for list input, invalid indices)</li>
+<li>did not have a helper in the room when we needed one in the difficult second part</li>
+<li>It was great! But (this is more of a question), will there be more advanced labs in the future (asking for a friend, who is familiar with the content of todays lesson). Also mocking, could be added, which I do not understand at all. Otherwise great, this is really needed in research!!!</li>
+<li>It would be helpful to have a session on integration tests and end-to-end tests, in particular, since you recommend this as the first step</li>
+<li>Maybe reduce diversity of platforms/languages to focus more on testing as a concept. An instructor-led discusscion of the last segment (test-design) would have been more helpful.</li>
+<li>The last part on &quot;test design&quot; became way too rushed - try to reduce the number of exercises here, or split them over more breakout exercise sessions. A lot of attendants didn't even have time to get the examples to compile/their testing environment to work. When we finally started screen sharing an environment that worked, the time was out, and we had barely covered anything.</li>
+<li>too short perhaps +1</li>
+<li>More time for exercises+1</li>
+<li>I think as well, it was way to short. We also did not have a mentor, but we worked well as a team, but this slowed us down.</li>
+<li>There should be guided exercises in Breakout rooms and less exercises so concepts can be learned qualitatively not quantitatively.</li>
+<li>Perhaps have some examples of really good tests</li>
+<li>The exercise of Test design section needs more time. Probably double.</li>
+<li>No &quot;real&quot; mentor in our room, so felt a bit lonely to take decisions</li>
+<li>Would have liked more time on the last excercise since that was the most interesting one for me :)</li>
+<li>Is there a document or a section for feedback? I would like to write it before I forget :)</li>
+<li><em>I will write it here. Please move it later to the appropriate place.</em> I had to create a Gitlab account and the instructions in the lesson on Automated testing and CI for pushing to the new repo did not match the steps needed. I suspect it was because people creating the instructions in the lesson alreay had an account. So maybe you would like to consider starting from scratch and creating a new account for those instructions.
+- thanks for this feedback. indeed this was steep learning and we need to improve this.</li>
+<li>Would be good to have some more detailed instructions on the setup requirements for either github or gitlab (as often people have different defaults). More guidance with the exercises would help.</li>
+<li>missing code repo were all groups could put their creative work</li>
+<li>Would it be helpful to somehow differentiate breakout rooms according to participant skill level? I understand you could be more clear about prerequisites (e.g. everyone should have done a fork/clone/pull request on someone else's repo <em>before</em> the workshop if this is expected knowledge), but differentiating groups on skill could possibly facilitate the level of instructor time or how it is allocated. Some groups with more advanced participants may want to move forward on their own, with possibility for expert support, where other groups could aim to cover the basics and have support focused on this. Understand this is always a challenge though!</li>
+<li>In one group I was in, the focus was a lot on just &quot;getting done&quot; for the first exercise, under silent and independent work. Could you perhaps clarify that participants shouldn't be afraid of asking questions, and that if you are done early, it is welcome to offer to help others who need it (if this is indeed the idea)? An ideal experience from the learner is probably to be in a group with people of the same skill level (approx), to know each other a little bit (to not be afraid to ask), and to get good help.</li>
+</ul>
+<hr />
+<h3 id="discussion-during-the-hackathon-on-march-24">Discussion during the hackathon on March 24</h3>
+<ul>
+<li>How to make sure that a temporary files gets deleted after the tests? Using fixtures maybe?
+<ul>
+<li>one example from the testing lesson:</li>
+<li>Oh, I did use the example below but it still happened that the files did not get removed. I'll try again</li>
+</ul>
+</li>
+</ul>
+<pre style="background-color:#f5f5f5;">
+<code class="language-python" data-lang="python"><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">tempfile
+</span><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">os
+
+</span><span style="color:#72ab00;">def </span><span style="color:#c23f31;">test_count_word_occurrence_in_file</span><span style="color:#1f1f1f;">():
+    </span><span style="color:#5597d6;">_</span><span style="color:#1f1f1f;">, temporary_file_name </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">tempfile.</span><span style="color:#5597d6;">mkstemp</span><span style="color:#1f1f1f;">()
+    </span><span style="color:#72ab00;">with </span><span style="color:#b39f04;">open</span><span style="color:#1f1f1f;">(temporary_file_name, </span><span style="color:#d07711;">&#39;w&#39;</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">as </span><span style="color:#1f1f1f;">f:
+        f.</span><span style="color:#5597d6;">write</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&quot;one two one two three four&quot;</span><span style="color:#1f1f1f;">)
+    count </span><span style="color:#72ab00;">= </span><span style="color:#5597d6;">count_word_occurrence_in_file</span><span style="color:#1f1f1f;">(temporary_file_name, </span><span style="color:#d07711;">&quot;one&quot;</span><span style="color:#1f1f1f;">)
+    </span><span style="color:#72ab00;">assert </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">== </span><span style="color:#b3933a;">2
+    </span><span style="color:#1f1f1f;">os.</span><span style="color:#5597d6;">remove</span><span style="color:#1f1f1f;">(temporary_file_name)
+</span></code></pre>
+<ul>
+<li>
+<p>Maybe the <strong>shutil</strong> package for file operations could be an option: https://docs.python.org/3/library/shutil.html
+One example here: https://stackoverflow.com/questions/62210497/how-to-automatically-delete-temporary-files-generated-during-pytest</p>
+<ul>
+<li>Working example:</li>
+</ul>
+</li>
+</ul>
+<pre style="background-color:#f5f5f5;">
+<code class="language-python" data-lang="python"><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">shutils
+
+@pytest.</span><span style="color:#5597d6;">fixture
+</span><span style="color:#72ab00;">def </span><span style="color:#c23f31;">tdir</span><span style="color:#1f1f1f;">():
+    </span><span style="color:#7f8989;">&quot;&quot;&quot;Create a temporary testing dir&quot;&quot;&quot;
+    </span><span style="color:#1f1f1f;">tmpdir </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">tempfile.</span><span style="color:#5597d6;">mkdtemp</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">prefix</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;test-doconce-&#39;</span><span style="color:#1f1f1f;">)
+    </span><span style="color:#72ab00;">yield </span><span style="color:#1f1f1f;">tmpdir
+    shutil.</span><span style="color:#5597d6;">rmtree</span><span style="color:#1f1f1f;">(tmpdir)
+    
+</span><span style="color:#72ab00;">def </span><span style="color:#c23f31;">test_myprog</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">tdir</span><span style="color:#1f1f1f;">):
+    finput </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;testdoc.txt&#39;
+    </span><span style="color:#7f8989;">#cp files to temporary directory
+    </span><span style="color:#1f1f1f;">shutil.</span><span style="color:#5597d6;">copy</span><span style="color:#1f1f1f;">(finput, tdir)
+    </span><span style="color:#7f8989;">#run myprog in bash
+    </span><span style="color:#1f1f1f;">out </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">run</span><span style="color:#1f1f1f;">([</span><span style="color:#d07711;">&#39;myprog&#39;</span><span style="color:#1f1f1f;">,</span><span style="color:#d07711;">&#39;arg1&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;arg2&#39;</span><span style="color:#1f1f1f;">, finput, </span><span style="color:#d07711;">&#39;--examples_as_exercises&#39;</span><span style="color:#1f1f1f;">],
+                         </span><span style="color:#5597d6;">cwd</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">tdir,
+                         </span><span style="color:#5597d6;">stdout</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">PIPE</span><span style="color:#1f1f1f;">,
+                         </span><span style="color:#5597d6;">stderr</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">STDOUT</span><span style="color:#1f1f1f;">,
+                         </span><span style="color:#5597d6;">encoding</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;utf8&#39;</span><span style="color:#1f1f1f;">)
+    </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(out.stdout)
+    </span><span style="color:#72ab00;">assert </span><span style="color:#1f1f1f;">out.returncode </span><span style="color:#72ab00;">== </span><span style="color:#b3933a;">0
+</span></code></pre>
+<ul>
+<li>
+<p>hard-coded paths and adjustable parameters inside the main code make it difficult to design tests</p>
+<ul>
+<li>one solution is to use config files. In Python, configparser library is convenient</li>
+</ul>
+</li>
+<li>
+<p>in Python, always use a requirements.txt or environment.yml file!</p>
+</li>
+<li>
+<p>testing Deep Learning methods is tricky!</p>
+<ul>
+<li>DL practioners, do you test your DL workflow?</li>
+<li>Fixed seed</li>
+<li>Check that the model can overfit on small amount of data</li>
+<li>Not really testing, but inspect the data manually (plot it)</li>
+</ul>
+</li>
+</ul>
+<h5 id="team-1">team 1</h5>
+<p>We focused on the importance on having well written code which is easily portable across platforms. We implemented relative paths coding.</p>
+<p>We learned that if you write a function thinking about &quot;how to test it&quot; it is much easier to write clean code.</p>
+<p>We got familiar with python</p>
+<h5 id="team-2">team 2</h5>
+<ul>
+<li>Complex code often has (a lot of) dependencies (e.g. compilers) which are hard to disentangle</li>
+<li>First step for regression testing is that code compiles</li>
+<li>pFUnit is a capable unit testing tool but has quite a lot prerequirements to run (e.g., CMAKE, ifort &gt; 18)</li>
+<li>pure functions are much easier to test compared to functions/subroutines which depend on each other --&gt; to fix this it would requires a change in the coding strategy</li>
+</ul>
+<h5 id="team-3">team 3</h5>
+<ul>
+<li>Catch2 is a convenient unit testing framework: allows easy way for Behaviour Driven Design, incorporates well into CMake.</li>
+<li>One needs to make sure the input values in the tests fall within reasonable values and also test for the unreasonable inputs (the code should handle those inputs via asserts or exceptions).</li>
+<li>events in GUI applications can be tested:
+<ul>
+<li>either using tools for inspection of graphical events </li>
+<li>or by using a log file.</li>
+</ul>
+</li>
+</ul>
+<h5 id="team-4">team 4</h5>
+<ul>
+<li>Tests have several orthogonal ways of being described:
+<ul>
+<li>framework orchestrating the tests (GoogleTest, pytest, Catch2, DocTest)</li>
+<li>who provides truth (regression tests assuming the old code was right (no it is for checking if something has changed), comparison tests assuming simple current code is right, oracular tests where some physical or mathematical property provides truth)</li>
+<li>how much code is tested (unit, integration, end-to-end)</li>
+</ul>
+</li>
+<li>Extracting dependencies can make code more testable, moves code closer to object-oriented design. However, data-driven design can be more performant, so compromises might be needed</li>
+<li>When proposing new science projects or code features, discuss testing up front. How will we know the observations are new science or code defect?</li>
+<li>Consider designing tests before a new feature is implemented.</li>
+<li>Support more than one compiler to get more feedback and write fewer bugs to catch in testing. Clang can compile and run CUDA code, not just nvcc. Multiple compiler support can also lead to improved code portability.</li>
+<li>Consider Sanitizers for memory, address, undefined behavior, leak, thread errors</li>
+<li>Consider AWS CodeBuild for GPU CI testing - the free tier might be enough for you to get some automated coverage</li>
+<li>Otherwise, free CI will at least compile GPU code if you can automate setting up the dependencies</li>
+<li>Do exactly what the user says. Do not do something &quot;clever&quot;, i.e. assuming that the user wants something else than he/she told the program to do. If the user was vague, then be clever. Just don't contradict them!</li>
+<li>Setting up code coverage testing can give valuable high-level feedback about how the code has changed. This can be helpful when arguing for funding. But beware of spending time chasing &quot;complete&quot; coverage - you probably have better ways to spend time.</li>
+<li>Research code often has a &quot;conflict of interest&quot; between developers and the PIs/drivers/funders of the projects, and/or it often feels like there is too little time to do proper testing. To improve the situation, try to find a way to prioritize what to test. Test coverage and looking for coverage gaps (e.g. with Gcov) might a useful approach. Test all new code versus old code when possible. One approach can be to profile to see which functions are used the most frequently, but this doesn't necessarily mean they should have a high priority.</li>
+<li>Some tools that might be helpful: sanitizer toolsets, thread sanitizers, run-time vs static analyzers, valgrind, cuda-memcheck, cppcheck...</li>
+<li>Add tests that cover areas that are expected to change</li>
+<li>Remove legacy tests after considering what coverage change that makes</li>
+</ul>
+<h5 id="team-5">team 5</h5>
+<ul>
+<li>We ended up learning a lot. Parametrized testing, regression tests (with and outout storing files) and end-to-end tests.
+<ul>
+<li>Any tip/code snippet for doing regression tests? Is it done on git or in pytest?i</li>
+<li>We ran the regression tests ourselves and copy-pasted the expected results into a test function. In other cases we stored the expected result in a .npz file. Example:<pre style="background-color:#f5f5f5;">
+<code class="language-python" data-lang="python"><span style="color:#1f1f1f;">@pytest.mark.</span><span style="color:#5597d6;">parametrize</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&quot;mean,var,expected&quot;</span><span style="color:#1f1f1f;">,[
+</span><span style="color:#1f1f1f;">                    (</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">3.5</span><span style="color:#1f1f1f;">,[[</span><span style="color:#b3933a;">8.17418321</span><span style="color:#1f1f1f;">], [</span><span style="color:#b3933a;">3.40055023</span><span style="color:#1f1f1f;">]]),
+</span><span style="color:#1f1f1f;">                    (</span><span style="color:#b3933a;">3.141592653589793</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">2.6457513110645907</span><span style="color:#1f1f1f;">,[[</span><span style="color:#b3933a;">7.80883646</span><span style="color:#1f1f1f;">],[</span><span style="color:#b3933a;">4.20030911</span><span style="color:#1f1f1f;">]]),
+</span><span style="color:#1f1f1f;">                    (</span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">1e-09</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">1000000.0</span><span style="color:#1f1f1f;">,[[</span><span style="color:#b3933a;">1764052.34596766</span><span style="color:#1f1f1f;">],[</span><span style="color:#b3933a;">400157.20836722</span><span style="color:#1f1f1f;">]]),
+</span><span style="color:#1f1f1f;">                    (</span><span style="color:#b3933a;">1.7724538509055159</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">, [[</span><span style="color:#b3933a;">1.77245385</span><span style="color:#1f1f1f;">],[</span><span style="color:#b3933a;">1.77245385</span><span style="color:#1f1f1f;">]])
+</span><span style="color:#1f1f1f;">                ])
+</span><span style="color:#72ab00;">def </span><span style="color:#c23f31;">test_Normal_sample_regression</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">mean</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">var</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">expected</span><span style="color:#1f1f1f;">):
+</span><span style="color:#1f1f1f;">    rng </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">np.random.</span><span style="color:#5597d6;">RandomState</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">)
+</span><span style="color:#1f1f1f;">    samples </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">cuqi.distribution.</span><span style="color:#5597d6;">Normal</span><span style="color:#1f1f1f;">(mean,var).</span><span style="color:#5597d6;">sample</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">rng</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">rng)
+</span><span style="color:#1f1f1f;">    target </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">np.</span><span style="color:#5597d6;">array</span><span style="color:#1f1f1f;">(expected)
+</span><span style="color:#1f1f1f;">    </span><span style="color:#72ab00;">assert </span><span style="color:#1f1f1f;">np.</span><span style="color:#5597d6;">allclose</span><span style="color:#1f1f1f;">(samples,target)
+</span></code></pre></li>
+</ul>
+</li>
+<li>Compared to zero testing one week ago, we now have a working automated test pipeline in Gitlab, with multiple unit tests and at least one end-to-end test.</li>
+<li>We spent a good amount of time on handling RNG and ended up with a pretty good solution thanks to Roberto!</li>
+<li>As a byproduct we also got to exercise collaborative git and gitlab workflows including rebases, merge request reviewing, as well as setting up a mirror repo to give access rights to Roberto.</li>
+</ul>
+<h5 id="team-6">team 6</h5>
+<ul>
+<li>There were many existing tests, but they were run via a shell script and you needed to do manual comparison.</li>
+<li>We created a fixture to work on a temporary directory (see code in Q&amp;A above)</li>
+<li>capture STDOUT STDERR (see my Q&amp;A above)</li>
+<li>tip: run <code>pytest --pdb</code> (it opens a debugger when a test fails)
+<ul>
+<li>Thanks for this suggestion :) </li>
+<li>Aha! TIL </li>
+</ul>
+</li>
+<li>Testing shell functions is hard, because they depend on the environment.  But it can be done.</li>
+<li>Working directories and relative pathnames require some care to get correct</li>
+</ul>
+<h5 id="team-7">team 7</h5>
+<ul>
+<li>Step-1: needed to find a platform to run/test code (we won't use HPC for testing the simple code). Tried google console &amp; mybinder</li>
+<li>Put the code in a repository</li>
+<li>Installed PFunit used to test for Fortran. Used a square example to make sure we could compile Ok. Broke it and fixed it.</li>
+<li>started to design a test for interpolation code but still some work to do.</li>
+<li>Got some experience with updating the github repository, and then pulling back to the local machine</li>
+<li>Learnt to use HackMD</li>
+<li>Did not finish!</li>
+</ul>
+<h5 id="team-8">team 8</h5>
+<ul>
+<li>Comparing different dictionaries -- deepdiff (https://github.com/seperman/deepdiff#a-few-examples)</li>
+<li>Dependencies within the code base</li>
+<li>Splitting tests into smaller units, always try to split it</li>
+<li>Setting up the environment, or compiling dependencies</li>
+</ul>
+<h5 id="team-9">team 9</h5>
+<ul>
+<li>Countinous Integration tests is an indispensable tool to find issues related to target platforms.
+<ul>
+<li>Found alot of issues by having the different compilers and platforms</li>
+</ul>
+</li>
+<li>UTest is a small, fast and lightweight testing framework for C and C++.
+<ul>
+<li>https://github.com/sheredom/utest.h</li>
+<li>nice find! I did not know about this one. </li>
+</ul>
+</li>
+<li>Integrates nicely into Cmake CTest. (Thanks mentor! :))</li>
+<li>Unittests are needed!</li>
+</ul>
+<h5 id="team-10">team 10</h5>
+<ul>
+<li>We learned about arranging tests in a hierarchical manner to match the project structure</li>
+<li>Learned about using pytest.fixture decorator</li>
+<li>Got some great advice in general, e.g. dataclasses and pathlib packages</li>
+<li>Discussed optimal class development</li>
+<li>Found a couple of bugs...</li>
+</ul>
+<h5 id="team-11">team 11</h5>
+<ul>
+<li>Learned to make a config file</li>
+<li>Designed an end-to-end test</li>
+<li>Created a class </li>
+<li>Discussed best practices in collaborative coding such as branching, pull requests etc.</li>
+<li>Learnt about creating environments (.yml files)</li>
+<li>Many suggestions about coding style</li>
+<li>Many suggestions about best practices in deep learning training</li>
+<li>Many other useful suggestions such as glob, os.path.split, context manager etc.</li>
+</ul>
+<hr />
+<h4 id="feedback">Feedback</h4>
+<p>Are hackathons useful? 
+Would you like to attend hackathons with other themes in the future? If so, which themes? 
+Any suggestions for improving the format?</p>
+<ul>
+<li>
+<p>Hackathon theme suggestion: preparing your code for publication, and/or for going open source. :+1: </p>
+</li>
+<li>
+<p>Hackathon/workshop suggestion: how to document &amp; comment (large) software projects :+1:</p>
+</li>
+<li>
+<p>A refactoring workshop/hackathon with best practices presented, maybe some checklist what to look at/for, spaghetti code to modular code</p>
+</li>
+<li>
+<p>It was absolutely useful which helped to debug testing process when using nbdev. Thanks a lot to my mentor for clearing all our issues. </p>
+</li>
+<li>
+<p>Absolutely useful. It motivates me to work on my project and I am inspired by your knowledge. You are a good inspiration to become better. I think a hackathon should be longer.</p>
+</li>
+<li>
+<p>Extremely time well spent. Having a chance to go through our own project with an expert is unique possibility. :+1:</p>
+</li>
+<li>
+<p>Hackathon on documentation!!! :+1::+1::+1::+1::+1:</p>
+</li>
+<li>
+<p>I can't believe this is free by the way. Great job. :+1:</p>
+</li>
+<li>
+<p>Great workshop, thanks a bunch! A bit of feedback/reflection: it was very easy for the hackathon to turn into a Q&amp;A with little to no hacking. This is of course up to the participants and can still be very helpful. After all, each group should maybe use their mentor in the way that suits them the best. But if there is an expectation/desire to do live pair programming, maybe give more instructions to mentors, or use the short meeting with the mentor on the first day to set up a &quot;homework&quot; for a particular test or piece of code to go through in the second day (during the hackathon).</p>
+<ul>
+<li>This is an impotant point! The quality of the hackathon may depend on the mentor -- so aligning the type of teaching/pair-programming may help. In our group we divided out &quot;homework&quot; that was then reviewed later, very useful.</li>
+</ul>
+</li>
+<li>
+<p>my lesson learnt:</p>
+<ul>
+<li>old-style <em>vs</em> new-style random number generation in NumPy. One should prefer new-style (where <em>both</em> seed <em>and</em> PRNG algorithm are explicitly set), but it doesn't play well with the more well-known old-style, where the PRNG is part of the global state..
+<ul>
+<li>do you have a link/example of the new style?
+<ul>
+<li>this shows both: https://numpy.org/doc/stable/reference/random/index.html#quick-start</li>
+<li>https://numpy.org/doc/stable/reference/random/new-or-different.html#new-or-different</li>
+<li>New-style offers more flexibility when you need <em>multiple streams</em> for parallel applications (<em>e.g.</em> the Philox generator or PCG64/MT19937 with jump-ahead)
+<ul>
+<li>awesome. thanks!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>utest is yet another unit test framework for C/C++. Very lightweight.</li>
+</ul>
+</li>
+<li>
+<p>my lessons learned:</p>
+<ul>
+<li>one can actually automatically test jupyter notebooks</li>
+<li>learned about https://nbdev.fast.ai/</li>
+<li>learned how to compare Python dictionaries using https://github.com/seperman/deepdiff</li>
+<li>mentoring more than 2 groups is not practical. sorry to each group that I had so little time</li>
+<li>learned more about pytest fixtures: https://docs.pytest.org/en/stable/fixture.html</li>
+</ul>
+</li>
+<li>
+<p>my lessons learned:</p>
+<ul>
+<li>use the standard library when possible</li>
+<li>learned how to use pytest when the test func are defined in several subdirectories</li>
+<li>learned that one may mimic GitHub action on my laptop https://github.com/nektos/act</li>
+<li>a great oportunity to see what kind of tests are appropriate depending on the project</li>
+<li>as always, Google is your best friend but it does not beat a mentor :)</li>
+<li>do what works for you / your project</li>
+</ul>
+</li>
+</ul>
+
+  
+
+          </div>
+          <div class="col-sm-2">
+            
+            <a href="https:&#x2F;&#x2F;coderefinery.org&#x2F;">
+              <img src="https://coderefinery.github.io/2021-03-17-testing-hackathon/processed_images/7f4da91af0b900d100.png" alt="CodeRefinery logo"
+                style="margin-top: 25px;">
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;enccs.se&#x2F;">
+              <img src="https://coderefinery.github.io/2021-03-17-testing-hackathon/processed_images/0edea093d6a3683b00.png" alt="ENCCS logo"
+                style="margin-top: 25px;">
+            </a>
+            
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="text-muted">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg">
+            <p>
+              <strong>Funding</strong>
+            </p>
+            <p>
+              CodeRefinery is a project within the
+              <a href="https://neic.no">Nordic e-Infrastructure Collaboration</a> (NeIC).
+              NeIC is an organisational unit under <a href="http://www.nordforsk.org/en">NordForsk</a>.
+            </p>
+          </div>
+          <div class="col-lg">
+            <p>
+              <strong>Privacy</strong>
+            </p>
+            <p>
+              <a href="https://coderefinery.org/privacy-policy/">Privacy policy</a>
+            </p>
+          </div>
+          <div class="col-lg">
+            <p>
+              <strong>Follow us</strong>
+            </p>
+            <p>
+              <a href="https://github.com/coderefinery" class="social">
+                <i class="bi bi-github" style="font-size: 2rem; color: black;"></i>
+              </a>
+
+              <a href="https://twitter.com/coderefine"  class="social" >
+                <i class="bi bi-twitter" style="font-size: 2rem; color: cornflowerblue;"></i>
+              </a>
+            </p>
+          </div>
+          <div class="col-lg">
+            <p>
+              <strong>Contact</strong>
+            </p>
+            <p>
+              <a href="mailto:support@coderefinery.org">support@coderefinery.org</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js@4.2.2/anchor.min.js"
+      integrity="sha256-E4RlfxwyJVmkkk0szw7LYJxuPlp6evtPSBDlWHsYYL8=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+
+      // https://github.com/twbs/bootstrap/issues/1768#issuecomment-6531466
+      var shiftWindow = function () { scrollBy(0, -100) };
+      if (location.hash) shiftWindow();
+      window.addEventListener("hashchange", shiftWindow);
+    </script>
+
+  </body>
+</html>
